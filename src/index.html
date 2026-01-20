@@ -1,13 +1,90 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" class="light-theme">
+
 <head>
-  <meta charset="utf-8">
-  <title>AngularTraining</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- ================= Charset ================= -->
+  <meta charset="utf-8" />
+
+  <!-- ================= Base SEO ================= -->
+  <title>Hawdaj – Modern Platform</title>
+  <meta name="description" content="Hawdaj is a modern Angular 20 SSR platform built for performance, SEO, scalability, and accessibility." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Hawdaj Team" />
+
+  <!-- ================= Viewport & Mobile ================= -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="width" />
+
+  <!-- ================= Base URL ================= -->
+  <base href="/" />
+
+  <!-- ================= Language & Multi-language ================= -->
+  <meta http-equiv="content-language" content="en" />
+  <link rel="alternate" hreflang="en" href="/" />
+  <link rel="alternate" hreflang="ar" href="/ar" />
+  <link rel="alternate" hreflang="x-default" href="/" />
+
+  <!-- ================= Canonical & Pagination ================= -->
+  <link rel="canonical" href="/" />
+  <link rel="index" href="/" />
+  <link rel="start" href="/" />
+
+  <!-- ================= Open Graph ================= -->
+  <meta property="og:site_name" content="Hawdaj" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hawdaj – Modern Platform" />
+  <meta property="og:description" content="Modern Angular 20 SSR website with SEO, multilingual support, and high performance." />
+  <meta property="og:url" content="/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_AR" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ================= Twitter Card ================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hawdaj – Modern Platform" />
+  <meta name="twitter:description" content="Angular 20 SSR website optimized for SEO, performance, and accessibility." />
+  <meta name="twitter:image" content="/assets/og-image.jpg" />
+  <meta name="twitter:site" content="@hawdaj" />
+  <meta name="twitter:creator" content="@hawdaj" />
+
+  <!-- ================= PWA / App ================= -->
+  <meta name="application-name" content="Hawdaj" />
+  <meta name="apple-mobile-web-app-title" content="Hawdaj" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <!-- ================= Theme & Dark Mode ================= -->
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+  <!-- ================= Cache Control ================= -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!-- ================= Security & Privacy ================= -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ================= Icons ================= -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+
+  <!-- ================= Lazy Load Angular Scripts ================= -->
+  <!-- <script type="module" src="runtime.js" defer></script>
+  <script type="module" src="polyfills.js" defer></script> -->
+  <script type="module" src="main.js" defer></script>
+
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+
 </html>
