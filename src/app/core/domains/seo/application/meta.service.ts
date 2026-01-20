@@ -1,8 +1,7 @@
-import { IMetaTag } from '../domain';
 import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { isPlatformBrowser } from '@angular/common';
-
+import { IMetaTag } from '../domain';
 
 @Injectable({ providedIn: 'root' })
 export class MetaService {
@@ -50,7 +49,7 @@ export class MetaService {
 
   private updateCanonical(url: string) {
     if (!isPlatformBrowser(this.platformId)) return;
-    let link: HTMLLinkElement | null = document.querySelector("link[rel='canonical']");
+    let link = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
     if (!link) {
       link = document.createElement('link');
       link.setAttribute('rel', 'canonical');
@@ -61,11 +60,7 @@ export class MetaService {
 
   private updateHreflangs(hreflangs: { lang: string; url: string }[]) {
     if (!isPlatformBrowser(this.platformId)) return;
-
-    // Remove existing hreflangs
     document.querySelectorAll("link[rel='alternate'][hreflang]").forEach(el => el.remove());
-
-    // Add new hreflang links
     hreflangs.forEach(({ lang, url }) => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'alternate');

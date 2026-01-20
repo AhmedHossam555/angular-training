@@ -1,9 +1,10 @@
-import { Router, NavigationEnd } from '@angular/router';
+
 import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ROUTE_META } from './infrastructure';
-import { MetaService } from './application'
+import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { MetaService } from './application';
+import { ROUTE_META } from './infrastructure';
 
 @NgModule({ imports: [CommonModule] })
 export class SeoModule {
@@ -12,7 +13,6 @@ export class SeoModule {
     const metaService = inject(MetaService);
 
     if (typeof window !== 'undefined') {
-      // Only subscribe in the browser, avoid SSR errors
       router.events
         .pipe(filter(event => event instanceof NavigationEnd))
         .subscribe((event: NavigationEnd) => {

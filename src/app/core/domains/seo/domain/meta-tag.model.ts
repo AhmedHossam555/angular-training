@@ -1,4 +1,3 @@
-// Strongly typed model/interface
 export interface IMetaTag {
   title?: string;
   description?: string;

@@ -1,28 +1,20 @@
-import { IMetaTag } from "../domain";
 
-export interface RouteMeta extends IMetaTag {
-  hreflangs?: { lang: string; url: string }[]; // For multilingual support
-}
+import { RouteMeta } from '../domain';
 
 export const ROUTE_META: Record<string, RouteMeta> = {
-  '/': {
+  '/home': {
     title: 'Home - HowdajWebsite',
     description: 'Welcome to HowdajWebsite, your trusted source for [topic]',
-    keywords: 'angular, seo, ssr, ddd',
-    url: 'https://www.yoursite.com/',
+    url: 'https://www.yoursite.com/home',
     image: 'https://www.yoursite.com/assets/og-home.jpg',
     ogType: 'website',
     twitterCard: 'summary_large_image',
-    author: 'Your Company Name',
-    robots: 'index, follow, max-image-preview:large',
     locale: 'en_US',
     siteName: 'HowdajWebsite',
-    canonical: 'https://www.yoursite.com/',
+    canonical: 'https://www.yoursite.com/home',
     hreflangs: [
-      { lang: 'en', url: 'https://www.yoursite.com/' },
-      { lang: 'ar', url: 'https://www.yoursite.com/ar/' },
-      { lang: 'ru', url: 'https://www.yoursite.com/ru/' },
-      { lang: 'zh', url: 'https://www.yoursite.com/zh/' },
+      { lang: 'en', url: 'https://www.yoursite.com/home' },
+      { lang: 'ar', url: 'https://www.yoursite.com/ar/home' },
     ],
   },
   '/about': {
@@ -36,6 +28,4 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     ],
   },
 };
-
-
 
