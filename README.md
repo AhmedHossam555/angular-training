@@ -14,6 +14,7 @@ This project follows **Domain-Driven Design (DDD)** combined with **Barrel Files
 
 This approach helps keep the codebase clean, testable, and easy to evolve over time.
 
+```text
 src/
 └── app/
     ├── core/
