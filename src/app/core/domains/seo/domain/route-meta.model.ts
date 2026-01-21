@@ -1,6 +1,6 @@
 
 // route-meta.model.ts
 import { IMetaTag } from './meta-tag.model';
-export interface RouteMeta extends IMetaTag {
+export interface IRouteMeta extends IMetaTag {
   hreflangs?: { lang: string; url: string }[];
 }

@@ -1,7 +1,7 @@
 
-import { RouteMeta } from '../domain';
+import { IRouteMeta } from '../domain';
 
-export const ROUTE_META: Record<string, RouteMeta> = {
+export const ROUTE_META: Record<string, IRouteMeta> = {
   '/home': {
     title: 'Home - HowdajWebsite',
     description: 'Welcome to HowdajWebsite, your trusted source for [topic]',
