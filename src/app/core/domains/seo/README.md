@@ -36,7 +36,7 @@ The SeoModule must be registered once during application bootstrap using importP
 This enables SSR meta rendering, client hydration, and route-based SEO updates.
 
 - app.config.ts
-```text
+```ts
   ...
   export const appConfig: ApplicationConfig = {
   providers: [
@@ -58,7 +58,7 @@ This enables SSR meta rendering, client hydration, and route-based SEO updates.
 
 - Example: Component Usage:
 
-```text
+```ts
   import { Component, OnInit, inject } from '@angular/core';
   import { MetaService } from '@/app/core/domains/seo';
   @Component({
