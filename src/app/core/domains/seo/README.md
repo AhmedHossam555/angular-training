@@ -36,13 +36,14 @@ The SeoModule must be registered once during application bootstrap using importP
 This enables SSR meta rendering, client hydration, and route-based SEO updates.
 
 - app.config.ts
+
 ```ts
   ...
   export const appConfig: ApplicationConfig = {
   providers: [
-  ...
-  // Inject SEO module for SSR meta updates
-  importProvidersFrom(SeoModule)
+    ...
+    // Inject SEO module for SSR meta updates
+    importProvidersFrom(SeoModule)
   ]
   };
 ```
@@ -62,28 +63,28 @@ This enables SSR meta rendering, client hydration, and route-based SEO updates.
   import { Component, OnInit, inject } from '@angular/core';
   import { MetaService } from '@/app/core/domains/seo';
   @Component({
-  selector: 'app-article',
-  template: `<h1>Article Page</h1>`
+    selector: 'app-article',
+    template: `<h1>Article Page</h1>`
   })
   export class ArticleComponent implements OnInit {
-  private readonly metaService = inject(MetaService);
+    private readonly metaService = inject(MetaService);
 
-  ngOnInit(): void {
-  this.metaService.updateTags({
-  title: 'Angular SEO Best Practices',
-  description: 'Learn how to manage SEO in Angular with SSR support.',
-  keywords: 'angular, seo, ssr',
-  author: 'Your Company',
-  robots: 'index,follow',
-  ogType: 'article',
-  twitterCard: 'summary_large_image',
-  image: 'https://example.com/assets/og/article.png',
-  canonical: 'https://example.com/articles/angular-seo',
-  hreflangs: [
-  { lang: 'en', url: 'https://example.com/articles/angular-seo' },
-  { lang: 'de', url: 'https://example.com/de/articles/angular-seo' }
-  ]
-  });
-  }
+    ngOnInit(): void {
+    this.metaService.updateTags({
+      title: 'Angular SEO Best Practices',
+      description: 'Learn how to manage SEO in Angular with SSR support.',
+      keywords: 'angular, seo, ssr',
+      author: 'Your Company',
+      robots: 'index,follow',
+      ogType: 'article',
+      twitterCard: 'summary_large_image',
+      image: 'https://example.com/assets/og/article.png',
+      canonical: 'https://example.com/articles/angular-seo',
+      hreflangs: [
+      { lang: 'en', url: 'https://example.com/articles/angular-seo' },
+      { lang: 'de', url: 'https://example.com/de/articles/angular-seo' }
+      ]
+      });
+    }
   }
 ```
