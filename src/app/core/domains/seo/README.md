@@ -21,12 +21,12 @@ core/
         ├── index.ts
         └── seo.module.ts
 ```
+
 - Layer responsibilities :
   application → runtime SEO logic (MetaService)
   domain → models and contracts
   infrastructure → route-level SEO configuration
   seo.module.ts → application bootstrap integration
-
 
 # How to Use
 
@@ -36,6 +36,7 @@ The SeoModule must be registered once during application bootstrap using importP
 This enables SSR meta rendering, client hydration, and route-based SEO updates.
 
 - app.config.ts
+```text
   ...
   export const appConfig: ApplicationConfig = {
   providers: [
@@ -44,6 +45,7 @@ This enables SSR meta rendering, client hydration, and route-based SEO updates.
   importProvidersFrom(SeoModule)
   ]
   };
+```
 
 # Using MetaService in a Component
 
@@ -55,32 +57,33 @@ This enables SSR meta rendering, client hydration, and route-based SEO updates.
   For static pages, prefer route-level SEO configuration.
 
 - Example: Component Usage:
+
+```text
   import { Component, OnInit, inject } from '@angular/core';
   import { MetaService } from '@/app/core/domains/seo';
+  @Component({
+  selector: 'app-article',
+  template: `<h1>Article Page</h1>`
+  })
+  export class ArticleComponent implements OnInit {
+  private readonly metaService = inject(MetaService);
 
-@Component({
-selector: 'app-article',
-template: `<h1>Article Page</h1>`
-})
-export class ArticleComponent implements OnInit {
-private readonly metaService = inject(MetaService);
-
-ngOnInit(): void {
-this.metaService.updateTags({
-title: 'Angular SEO Best Practices',
-description: 'Learn how to manage SEO in Angular with SSR support.',
-keywords: 'angular, seo, ssr',
-author: 'Your Company',
-robots: 'index,follow',
-ogType: 'article',
-twitterCard: 'summary_large_image',
-image: 'https://example.com/assets/og/article.png',
-canonical: 'https://example.com/articles/angular-seo',
-hreflangs: [
-{ lang: 'en', url: 'https://example.com/articles/angular-seo' },
-{ lang: 'de', url: 'https://example.com/de/articles/angular-seo' }
-]
-});
-}
-}
-
+  ngOnInit(): void {
+  this.metaService.updateTags({
+  title: 'Angular SEO Best Practices',
+  description: 'Learn how to manage SEO in Angular with SSR support.',
+  keywords: 'angular, seo, ssr',
+  author: 'Your Company',
+  robots: 'index,follow',
+  ogType: 'article',
+  twitterCard: 'summary_large_image',
+  image: 'https://example.com/assets/og/article.png',
+  canonical: 'https://example.com/articles/angular-seo',
+  hreflangs: [
+  { lang: 'en', url: 'https://example.com/articles/angular-seo' },
+  { lang: 'de', url: 'https://example.com/de/articles/angular-seo' }
+  ]
+  });
+  }
+  }
+```
