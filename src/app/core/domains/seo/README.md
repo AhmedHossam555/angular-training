@@ -1,24 +1,32 @@
 # Folder Structure
 
+```text
 core/
 └── domains/
-└── seo/
-├── application/
-│ ├── index.ts
-│ └── meta.service.ts
-│
-├── domain/
-│ ├── index.ts
-│ ├── meta-tag.model.ts
-│ └── route-meta.model.ts
-│
-├── infrastructure/
-│ ├── index.ts
-│ ├── meta.factory.ts
-│ └── route-meta.config.ts
-│
-├── index.ts
-└── seo.module.ts
+    └── seo/
+        ├── application/
+        │   ├── index.ts
+        │   └── meta.service.ts
+        │
+        ├── domain/
+        │   ├── index.ts
+        │   ├── meta-tag.model.ts
+        │   └── route-meta.model.ts
+        │
+        ├── infrastructure/
+        │   ├── index.ts
+        │   ├── meta.factory.ts
+        │   └── route-meta.config.ts
+        │
+        ├── index.ts
+        └── seo.module.ts
+```
+- Layer responsibilities :
+  application → runtime SEO logic (MetaService)
+  domain → models and contracts
+  infrastructure → route-level SEO configuration
+  seo.module.ts → application bootstrap integration
+
 
 # How to Use
 
@@ -75,3 +83,4 @@ hreflangs: [
 });
 }
 }
+
