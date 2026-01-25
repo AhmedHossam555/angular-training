@@ -1,7 +1,7 @@
 import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { isPlatformBrowser } from '@angular/common';
-import { IMetaTag } from '../domain';
+import { IMetaTag, IRouteMeta } from '../domain';
 
 @Injectable({ providedIn: 'root' })
 export class MetaService {
@@ -9,7 +9,7 @@ export class MetaService {
   private title = inject(Title);
   private platformId = inject(PLATFORM_ID);
 
-  updateTags(tags: IMetaTag & { hreflangs?: { lang: string; url: string }[] }) {
+  updateTags(tags: IMetaTag & IRouteMeta) {
     const url = tags.url || (isPlatformBrowser(this.platformId) ? window.location.href : '');
 
     if (tags.title) {
@@ -70,3 +70,4 @@ export class MetaService {
     });
   }
 }
+

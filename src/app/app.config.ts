@@ -10,6 +10,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes), provideClientHydration(withEventReplay()),
+    
     // Inject SEO module for SSR meta updates
     importProvidersFrom(SeoModule)
   ]

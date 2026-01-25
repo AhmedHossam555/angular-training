@@ -1,0 +1,23 @@
+TASKS
+1- tscconfig.json 
+2- package.json 
+3- server.ts (Handle cache) 
+4- Absolute Path in assets (global)
+5- angular.json 
+6- Update MetaService to use new RouteMeta model 
+6- README.md 
+7- FolderStructure Project 
+
+
+
+--------------------------------
+Component (UI)
+   ↓
+Facade (application - Business logic)
+   ↓
+Service (infrastructure)
+   ↓
+API
+------------
+Page → SEO Facade → Meta Service
+------------ 
