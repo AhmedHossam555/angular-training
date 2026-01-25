@@ -67,7 +67,6 @@
  */
 // export const reqHandler = createNodeRequestHandler(app);
 
-
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
@@ -94,14 +93,9 @@ app.use(
   }),
 );
 
-/**
- *  Disable cache for SSR HTML
- */
+/* Disable cache for SSR HTML */
 app.use((req, res, next) => {
-  res.setHeader(
-    'Cache-Control',
-    'no-store, no-cache, must-revalidate, proxy-revalidate',
-  );
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Expires', '0');
   next();
@@ -113,9 +107,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => (response ? writeResponseToNodeResponse(response, res) : next()))
     .catch(next);
 });
 

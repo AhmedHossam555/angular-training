@@ -8,8 +8,6 @@ TASKS
 6- README.md 
 7- FolderStructure Project 
 
-
-
 --------------------------------
 Component (UI)
    ↓
@@ -21,3 +19,16 @@ API
 ------------
 Page → SEO Facade → Meta Service
 ------------ 
+--------------------------------
+
+
+
+## 🧠 Rule of thumb
+- `text` → folder structures, README examples
+- `ts` → Angular / TypeScript
+- `bash` → Git commands
+- `json` → configs
+
+Ex: 
+```text
+```
