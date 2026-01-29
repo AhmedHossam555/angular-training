@@ -75,6 +75,7 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { environment } from './environments/environment';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -99,7 +100,7 @@ app.use((req, res, next) => {
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Expires', '0');
   next();
-});
+}); 
 
 /**
  *  Angular SSR Handler
@@ -114,10 +115,25 @@ app.use((req, res, next) => {
 /**
  * Start Server
  */
-if (isMainModule(import.meta.url) || process.env['pm_id']) {
-  const port = process.env['PORT'] || 4000;
+// if (isMainModule(import.meta.url) || process.env['pm_id']) {
+//   const isDev = process.env['NODE_ENV'] !== 'production';
+
+//   const port = process.env['PORT'] ?? (isDev ? 5000 : 4000);
+
+//   app.listen(port, () => {
+//     console.log(
+//       `🚀 SSR ${isDev ? 'DEV' : 'LIVE'} server running on http://localhost:${port}`,
+//     );
+//   });
+// }
+
+if (isMainModule(import.meta.url)) {
+  const port = Number(process.env['PORT'] ?? environment.port);
+
   app.listen(port, () => {
-    console.log(`🚀 Server running on http://localhost:${port}`);
+    console.log(
+      `🚀 SSR ${environment.name.toUpperCase()} running on http://localhost:${port}`
+    );
   });
 }
 

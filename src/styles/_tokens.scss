@@ -1,0 +1,24 @@
+:root {
+  --primary: #3b82f6;
+  --danger: #dc2626;
+
+  --border-color: #d1d5db;
+  --bg-input: #ffffff;
+  --bg-disabled: #f3f4f6;
+
+  --text-primary: #111827;
+  --text-muted: #6b7280;
+
+  --focus-ring: rgba(59, 130, 246, .25);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-color: #374151;
+    --bg-input: #111827;
+    --bg-disabled: #1f2937;
+    --text-primary: #f9fafb;
+    --text-muted: #9ca3af;
+  }
+}

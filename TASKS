@@ -8,6 +8,8 @@ TASKS
 6- README.md 
 7- FolderStructure Project 
 
+
+
 --------------------------------
 Component (UI)
    ↓
@@ -32,3 +34,12 @@ Page → SEO Facade → Meta Service
 Ex: 
 ```text
 ```
+
+
+-------------------
+- Global |  Update two project to angular 21  
+
+- Global readme |  SEO Readme 
+
+- Enviroments | Add enviroments files:
+  1. Files [test / dev / uat / live  ]
