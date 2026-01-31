@@ -49,25 +49,73 @@ src/
     ├── app.config.server.ts
     └── app.html
 ```
-➡️ SEO Domain Documentation:
-📄 src/app/core/domains/seo/README.md
-
-
-logging/
-├── [application/](./application)
-│   ├── [logger.service.ts](./application/logger.service.ts)
-│   ├── [logger.token.ts](./application/logger.token.ts)
-│   └── [index.ts](./application/index.ts)
+src/
+├── environments/
+│   ├── base/
+│   │   ├── environment.base.ts
+│   │   ├── environment.interface.ts
+│   │   └── environment.types.ts
+│   │
+│   ├── environment.ts              # Active alias (Angular fileReplacement)
+│   ├── environment.local.ts        # Local developer machine
+│   ├── environment.development.ts  # Shared development
+│   ├── environment.staging.ts      # Staging (UAT)
+│   ├── environment.test.ts         # Testing / QA
+│   └── environment.production.ts   # Production
 │
-├── [domain/](./domain)
-│   ├── [log-level.enum.ts](./domain/log-level.enum.ts)
-│   ├── [log-policy.ts](./domain/log-policy.ts)
-│   ├── [logger.interface.ts](./domain/logger.interface.ts)
-│   └── [index.ts](./domain/index.ts)
-│
-├── [infrastructure/](./infrastructure)
-│   ├── [console-logger.adapter.ts](./infrastructure/console-logger.adapter.ts)
-│   ├── [logger.config.ts](./infrastructure/logger.config.ts)
-│   └── [index.ts](./infrastructure/index.ts)
-│
-└── [README.md](./README.md)
+└── app/
+    ├── core/
+    │   └── domains/
+    │       ├── seo/
+    │       │   ├── application/
+    │       │   │   ├── index.ts
+    │       │   │   └── meta.service.ts
+    │       │   │
+    │       │   ├── domain/
+    │       │   │   ├── index.ts
+    │       │   │   ├── meta-tag.model.ts
+    │       │   │   └── route-meta.model.ts
+    │       │   │
+    │       │   ├── infrastructure/
+    │       │   │   ├── index.ts
+    │       │   │   ├── meta.factory.ts
+    │       │   │   └── route-meta.config.ts
+    │       │   │
+    │       │   ├── index.ts
+    │       │   └── seo.module.ts
+    │       │
+    │       └── logging/
+    │           ├── application/
+    │           │   ├── index.ts
+    │           │   ├── logger.service.ts
+    │           │   └── logger.token.ts
+    │           │
+    │           ├── domain/
+    │           │   ├── index.ts
+    │           │   ├── log-level.enum.ts
+    │           │   ├── log-policy.ts
+    │           │   └── logger.interface.ts
+    │           │
+    │           ├── infrastructure/
+    │           │   ├── console-logger.adapter.ts
+    │           │   ├── index.ts
+    │           │   └── logger.config.ts
+    │           │
+    │           ├── index.ts
+    │           └── README.md
+    │
+    ├── features/
+    │   └── home/
+    │       ├── home.component.ts
+    │       ├── home.routes.ts
+    │       ├── home.module.ts
+    │       └── home.page.ts
+    │
+    ├── shared/
+    │   ├── components/
+    │   ├── directives/
+    │   └── pipes/
+    │
+    ├── app.config.ts
+    ├── app.config.server.ts
+    └── app.html

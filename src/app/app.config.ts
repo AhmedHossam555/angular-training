@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { SeoModule } from './core/domains/seo';
-import { ILogger , LOGGER_TOKEN , ConsoleLoggerAdapter , LoggerService  } from './core/logging';
+import { ILogger , LOGGER_TOKEN , ConsoleLoggerAdapter , LoggerService  } from './core/domains/logging';
 
 export const appConfig: ApplicationConfig = {
   providers: [

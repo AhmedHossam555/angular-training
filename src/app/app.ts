@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoggerService } from './core/logging/application';
+import { LoggerService } from './core/domains/logging';
 
 @Component({
   selector: 'app-root',
