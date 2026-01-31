@@ -29,7 +29,7 @@ src/
     │           │   ├── meta-tag.model.ts
     │           │   └── route-meta.model.ts
     │           │
-    │           ├── infrastructure/
+    │       text    ├── infrastructure/
     │           │   ├── index.ts
     │           │   ├── meta.factory.ts
     │           │   └── route-meta.config.ts
@@ -48,5 +48,26 @@ src/
     ├── app.config.ts
     ├── app.config.server.ts
     └── app.html
+```
+➡️ SEO Domain Documentation:
+📄 src/app/core/domains/seo/README.md
 
 
+logging/
+├── [application/](./application)
+│   ├── [logger.service.ts](./application/logger.service.ts)
+│   ├── [logger.token.ts](./application/logger.token.ts)
+│   └── [index.ts](./application/index.ts)
+│
+├── [domain/](./domain)
+│   ├── [log-level.enum.ts](./domain/log-level.enum.ts)
+│   ├── [log-policy.ts](./domain/log-policy.ts)
+│   ├── [logger.interface.ts](./domain/logger.interface.ts)
+│   └── [index.ts](./domain/index.ts)
+│
+├── [infrastructure/](./infrastructure)
+│   ├── [console-logger.adapter.ts](./infrastructure/console-logger.adapter.ts)
+│   ├── [logger.config.ts](./infrastructure/logger.config.ts)
+│   └── [index.ts](./infrastructure/index.ts)
+│
+└── [README.md](./README.md)

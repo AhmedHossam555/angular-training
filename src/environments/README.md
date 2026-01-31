@@ -242,25 +242,18 @@ These scripts ensure the correct environment is bundled for SSR.
 
 ```json
 "scripts": {
-  "ng": "ng",
-  "start": "ng serve",
-
-  "build": "ng build",
-  "watch": "ng build --watch --configuration=development",
-  "test": "ng test",
-
-  "build:ssr:dev": "ng build --configuration=development",
-  "build:ssr:staging": "ng build --configuration=staging",
-  "build:ssr:test": "ng build --configuration=test",
-  "build:ssr:prod": "ng build --configuration=production",
-
-  "serve:ssr": "node dist/angular-training/server/server.mjs",
-
-  "ssr:local": "ng build --configuration=local && npm run serve:ssr",
-  "ssr:dev": "npm run build:ssr:dev && npm run serve:ssr",
-  "ssr:staging": "npm run build:ssr:staging && npm run serve:ssr",
-  "ssr:test": "npm run build:ssr:test && npm run serve:ssr",
-  "ssr:prod": "npm run build:ssr:prod && npm run serve:ssr"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration=development",
+    "test": "ng test",
+    "build:ssr:dev": "ng build --configuration=development",
+    "build:ssr:staging": "ng build --configuration=staging",
+    "build:ssr:prod": "ng build --configuration=production",
+    "serve:ssr": "node dist/angular-training/server/server.mjs",
+    "ssr:dev": "npm run build:ssr:dev && npm run serve:ssr",
+    "ssr:staging": "npm run build:ssr:staging && npm run serve:ssr",
+    "ssr:prod": "npm run build:ssr:prod && npm run serve:ssr"
 }
 ```
 
